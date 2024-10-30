@@ -34,6 +34,6 @@ jobs:
         run: |
           echo "Esses são os valores passados nos inputs"
           echo "A versão é: ${{ inputs.versao }}"
-          echo "O número do card é: ${{ inputs.number_card }}"
+          echo "O número do card é: ${{ inputs.numbero_card }}"
           echo "Especificação do deploy é: ${{ inputs.fazer_deploy }}"
           echo "O ambiente do deploy é: ${{ inputs.ambiente }}"
