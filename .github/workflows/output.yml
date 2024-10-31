@@ -11,7 +11,7 @@ jobs:
       - name: Gerando output com shell
         id: exemplo-output
         run: |
-          ACTION_RANDOM=${{ $RANDOM }}
+          ACTION_RANDOM=$(( $RANDOM ))
           echo "action_random=$ACTION_RANDOM" >> GITHUB_OUTPUT
 
       - name: Exibindo o output da action example output
