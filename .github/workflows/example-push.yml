@@ -1,7 +1,7 @@
 name: Workflow Evento
 on:
   push:
-    branches: ["main", "feature/*"]
+    branches: ["feature/*"]
 jobs:
   teste:
     runs-on: ubuntu-latest
