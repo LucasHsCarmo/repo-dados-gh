@@ -1,5 +1,7 @@
 name: Workflow Evento
 on:
+  pull_request:
+    branches: ["main"]
 #  schedule:
 #    - cron: */2 * * * * 
 jobs:
