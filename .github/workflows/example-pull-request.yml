@@ -1,0 +1,22 @@
+name: Workflow Evento
+on:
+  pull_request:
+    branches: ["main"]
+    types: closed
+jobs:
+  teste:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+    - name: Action de Teste
+      run: echo "Action apenas executada na main e feature"
+    - name: Alteração no card
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Adicionando um comentário aqui sobre o PR'
+          })
