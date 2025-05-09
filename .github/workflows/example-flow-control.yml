@@ -9,3 +9,8 @@ jobs:
     steps:
       - name: Executando na main
         run: echo "Executando comando na main"
+  bora:
+    if: ${{ contains(github.ref,'refs/heads/feature') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execução em feature
