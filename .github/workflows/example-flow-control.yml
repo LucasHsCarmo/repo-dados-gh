@@ -12,6 +12,6 @@ jobs:
   bora:
     runs-on: ubuntu-latest
     steps:
-        if: ${{ contains(github.ref,'refs/heads/feature') }}
       - name: Execução em feature
+        if: ${{ contains(github.ref,'refs/heads/feature') }}
         run: echo "Execução em Feature"
