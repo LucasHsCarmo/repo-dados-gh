@@ -1,4 +1,4 @@
-name: Workflow Event
+name: Workflow Event Control
 on:
   push:
 jobs:
