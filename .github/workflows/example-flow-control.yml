@@ -1,0 +1,16 @@
+name: Workflow Event
+on:
+  push:
+jobs:
+  apenas-main:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    name: Esses Jobs só executam na branch main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executando na main
+        run: echo "Executando comando na main"
+  bora:
+    if: ${{ contains(github.ref,'refs/heads/feature') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execução em feature
