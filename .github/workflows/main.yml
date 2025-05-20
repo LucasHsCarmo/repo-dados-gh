@@ -1,14 +1,27 @@
-name: Workflow Evento
+name: Deploy CI/CD Fake
 on:
   workflow_dispatch:
     inputs:
-      exemplo-input:
-        type: string
-        description: "Teste de Input"
+      ambiente:
+        type: choice
+        default: "desenvolvimento"
         required: true
+        description: "Ambiente onde vai ser feito o deploy"
+        options:
+          - desenvolvimento
+          - homologacao
+          - producao
 jobs:
-  teste:
+  CI:
     runs-on: ubuntu-latest
     steps:
-    - name: Action de Teste
-      run: echo "${{ inputs.exemplo-input }}"
+      - name: Build de Imagem Docker
+        run: echo "Execução do comando de docker build"
+      - name: Execução de Teste de Software
+        run: echo "Aqui eu executo o teste de software"
+  
+  CD:
+    needs: [CI]
+    uses: LucasHsCarmo/repo-dados-gh/.github/workflows/cd.yml@main
+    with:
+      ambiente: ${{ inputs.ambiente }}
