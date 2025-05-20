@@ -1,4 +1,4 @@
-name: Workflow Evento
+name: Workflow Evento Input
 on:
   workflow_dispatch:
     inputs:
